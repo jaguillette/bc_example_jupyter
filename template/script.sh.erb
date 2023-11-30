@@ -12,13 +12,13 @@ cd "${HOME}"
 
 <%- unless context.modules.blank? -%>
 # Purge the module environment to avoid conflicts
-module purge
+# module purge
 
 # Load the require modules
-module load <%= context.modules %>
+spack load <%= context.modules %>
 
 # List loaded modules
-module list
+spack find
 <%- end -%>
 
 # Benchmark info

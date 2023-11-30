@@ -25,7 +25,7 @@ attributes:
   #     modules: "python/3.5"
   # @example Using combination of modules
   #     modules: "python/3.5 cuda/8.0.44"
-  modules: "python"
+  modules: "jupyterlab"
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
