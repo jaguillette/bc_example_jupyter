@@ -15,6 +15,7 @@ cd "${HOME}"
 # module purge
 
 # Load the require modules
+echo "Loading modules: <%= context.modules %>"
 spack load <%= context.modules %>
 
 # List loaded modules
@@ -24,6 +25,6 @@ spack find
 # Benchmark info
 echo "TIMING - Starting jupyter at: $(date)"
 
-# Launch the Jupyter Notebook Server
+# Launch the Jupyter Lab Server
 set -x
-jupyter notebook --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
+jupyter lab --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
