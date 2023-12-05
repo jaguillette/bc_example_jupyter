@@ -6,6 +6,12 @@
 An example Batch Connect app that launches a Jupyter Notebook server within a
 batch job.
 
+> :warning: I've used this repository as a test to make sure that I can get a simple OnDemand app up, running, and available within the Parallel Cluster environment in development at work. I was able to get it running, but this isn't yet ready for use as a template app for future Jupyter apps in our environment. Here are the outstanding issues as I see them:
+>
+> * The form.yml includes configuration options that don't have a use for our users, like setting the account and queue, as well as getting an email on launch. The initial form should be simplified and tested.
+> * I haven't landed on a strategy for managing dependencies. Ideally spack can load them, but I haven't looked in to what's available and what's possible to do as a custom setup. I think that should be doable, it's just not the priority as I write this.
+> * *Enhancement:* Hopefully I can eventually figure out what needs to happen for the `set_host` in `submit.yml` to be configured globally at the cluster level. That would make me feel better, since currently my plan is to just set it for every single app, since they'll all need it. See notes in `submit.yml.erb` for details.
+
 ## Prerequisites
 
 This Batch Connect app requires the following software be installed on the
