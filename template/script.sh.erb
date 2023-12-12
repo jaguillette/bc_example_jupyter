@@ -11,8 +11,8 @@ cd "${HOME}"
 #
 
 <%- unless context.modules.blank? -%>
-# Purge the module environment to avoid conflicts
-# module purge
+# Unload the spack module environment to avoid conflicts
+spack unload --all
 
 # Load the require modules
 echo "Loading modules: <%= context.modules %>"
