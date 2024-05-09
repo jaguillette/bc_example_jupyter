@@ -6,6 +6,9 @@ echo "TIMING - Starting main script at: $(date)"
 # Set working directory to home directory
 cd "${HOME}"
 
+# Load spack
+. /shared/software/spack/share/spack/setup-env.sh 
+
 #
 # Start Jupyter Notebook Server
 #
