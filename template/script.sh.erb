@@ -3,23 +3,25 @@
 # Benchmark info
 echo "TIMING - Starting main script at: $(date)"
 
+# Validate home directory and set it to what it should be
+echo "original HOME=$HOME"
+echo "user=$(id -nu)"
+export HOME="/shared/home/$(id -nu)"
+echo "new HOME=$HOME"
+
 # Set working directory to home directory
 cd "${HOME}"
 
 # Load spack
-. /shared/software/spack/share/spack/setup-env.sh 
+. <%= context.spack %>/share/spack/setup-env.sh 
 
 #
 # Start Jupyter Notebook Server
 #
 
-<%- unless context.modules.blank? -%>
-# Unload the spack module environment to avoid conflicts
-spack unload --all
-
-# Load the require modules
-echo "Loading modules: <%= context.modules %>"
-spack load <%= context.modules %>
+# Load the require environment
+echo "Loading environment: <%= context.environment %>"
+spack env activate <%= context.environment %>
 
 # List loaded modules
 spack find
