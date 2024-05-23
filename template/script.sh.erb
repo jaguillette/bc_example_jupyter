@@ -22,6 +22,7 @@ cd "${HOME}"
 # Load the require environment
 echo "Loading environment: <%= context.environment %>"
 spack env activate <%= context.environment %>
+echo "TIMING - Spack environment loaded at $(date)"
 
 # List loaded modules
 spack find

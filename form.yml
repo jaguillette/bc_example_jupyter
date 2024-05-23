@@ -37,6 +37,14 @@ attributes:
     required: true
     help: "The location of a spack installation folder to use. The default location is \"/shared/spack\". If using a custom location, use the absolute path to the root spack folder, containing `bin`, `etc`, `lib`, `opt`, `share`, and `var` folders."
 
+  custom_num_cores:
+    widget: "number_field"
+    label: "Number of CPUs"
+    value: 1
+    min: 1
+    max: 4
+    step: 1
+
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
   extra_jupyter_args: ""
@@ -55,4 +63,3 @@ form:
   - spack
   - extra_jupyter_args
   - bc_num_hours
-  - bc_num_slots
