@@ -63,3 +63,4 @@ form:
   - spack
   - extra_jupyter_args
   - bc_num_hours
+  - custom_num_cores
